@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+*.fit
+*.FIT
+manifest.json
+*.coordinates.json
+sync-data/
+release/
+.openai/
+.sites/
+node_modules/
+*.zip

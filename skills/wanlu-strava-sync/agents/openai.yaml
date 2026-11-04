@@ -1,0 +1,4 @@
+interface:
+  display_name: "顽鹿 → Strava 同步"
+  short_description: "读取顽鹿骑行、检查坐标系并上传 Strava，保留原始 FIT 和同步结果"
+  default_prompt: "使用 $wanlu-strava-sync 把我指定日期的顽鹿骑行同步到 Strava。"
