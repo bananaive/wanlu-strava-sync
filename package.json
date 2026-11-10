@@ -1,0 +1,51 @@
+{
+  "name": "dsh-wanlu-strava-sync",
+  "version": "0.1.0",
+  "description": "Export selected OneLap cycling FIT files and guide browser-based Strava uploads with validation and coordinate review.",
+  "type": "module",
+  "main": "./index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bananaive/wanlu-strava-sync.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-skills",
+    "cycling",
+    "strava",
+    "onelap"
+  ],
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "skills/wanlu-strava-sync/SKILL.md",
+    "skills/wanlu-strava-sync/references/*.md",
+    "skills/wanlu-strava-sync/scripts/*.py",
+    "skills/wanlu-strava-sync/agents/openai.yaml",
+    "skills/wanlu-strava-sync/LICENSE"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.2 <0.2.2 || >=0.2.2-0 <0.3.0-0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": ">=0.2.1-rc.2 <0.2.2 || >=0.2.2-0 <0.3.0-0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/dsh-skill": "0.2.1-rc.2",
+    "@deepseek-ai/dsh-skill-filesystem": "0.2.1-rc.2"
+  },
+  "scripts": {
+    "test": "node --test tests/harness.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
