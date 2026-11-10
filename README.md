@@ -30,6 +30,20 @@ cp -R skills/wanlu-strava-sync ~/.codex/skills/
 
 Skill 不包含浏览器自动化引擎，不会为 agent 增加权限。仅有文本对话能力的模型不能独立完成上传。
 
+## DeepSeek Harness 安装
+
+```sh
+dsh plugin --profile web add github:bananaive/wanlu-strava-sync
+```
+
+将 `web` 换成自己的 profile。安装后在技能列表选择 `wanlu-strava-sync`，告诉 agent 要同步的日期和可见性。
+
+插件只注册本包的 Skill 和资源，不启动同步任务、不读取账号、不上传活动；同步需要会话具备前述浏览器和文件访问能力，并获得用户授权。发行包没有安装时执行的脚本。
+
+支持 DSH 0.2.1-rc.2 及后续 0.2.x（含 0.2.2 预发布版），已在 0.2.1-rc.2 验证注册、读取资源、卸载及临时 profile 安装；未在 Harness 中重新执行真实账号同步。
+
+也可把 `skills/wanlu-strava-sync` 复制到 `~/.dsh/skills/`，两种安装方式任选一种。开发者安装开发依赖后运行 `npm test` 验证 Harness 集成，运行下文 Python 测试验证离线脚本。
+
 ## 工作方式
 
 1. 按明确日期读取顽鹿记录，核对时间和距离并选择记录 ID。
